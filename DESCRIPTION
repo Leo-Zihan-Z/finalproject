@@ -1,20 +1,19 @@
-Package: bst260project
+Package: finalproject
 Title: project code and narrative
 Version: 0.0.2
 Authors@R:
-    person(given = "yourfirstname",
-           family = "lastname",
+    person(given = "Zihan",
+           family = "Zhuang",
            role = c("aut", "cre"),
-           email = "youremail@gmail.com",
-           comment = c(ORCID = "0000-0002-1825-0097"))
+           email = "zihanzhuang@hsph.harvard.edu")
 Description: provide text on what your project emphasizes and 
 	accomplishes in three or more complete sentences.
 Depends: R (>= 4.5.0)
-Suggests: knitr, testthat, rmarkdown, pkgdown
+Suggests: knitr, testthat, rmarkdown, pkgdown, quarto
 License: Artistic-2.0
 VignetteBuilder: quarto
 Encoding: UTF-8
-URL: https://github.com/Leo-Zihan-Z/finalproject
+URL: https://Leo-Zihan-Z.github.io/finalproject/, https://github.com/Leo-Zihan-Z/finalproject
 BugReports: https://github.com/Leo-Zihan-Z/finalproject/issues
 Config/roxygen2/version: 8.1.1
 Roxygen: list(markdown=TRUE)
