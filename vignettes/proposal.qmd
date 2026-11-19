@@ -1,0 +1,36 @@
+---
+title: "BST260 Final Project Proposal"
+author: "Leo Zhuang"
+date: 2026-11-18
+format: html
+---
+
+To: BST260 Teaching Team, Fall 2026
+
+## Project Overview
+
+For my final project, I plan to study two public health questions using datasets introduced in BST260. I want to begin with exploratory and statistical analyses, then examine whether the available data support causal inference. The two analyses will focus on BMI and blood pressure in NHANES, and state firearm legislation and homicide mortality using RAND and CDC data.
+
+## Analysis 1: BMI and Systolic Blood Pressure
+
+**Research question:** How is BMI associated with systolic blood pressure among US adults, and can we estimate its total causal effect on blood pressure?
+
+I will use the `NHANES` dataset from the NHANES R package and focus on adults aged 20 and older. The unit of analysis is an individual participant. BMI (`BMI`, kg/m²) will be the continuous exposure, and average systolic blood pressure (`BPSysAve`, mmHg) will be the continuous outcome.
+
+I plan to start with descriptive statistics and visualizations of BMI and blood pressure, followed by linear regression and spline models to examine their association and possible nonlinearity. I also want to explore the total causal effect of BMI on systolic blood pressure. I will first use a causal diagram to determine an adjustment set, considering variables such as age, sex, education, race/ethnicity, and physical activity. I will then explore regression standardization (G-computation) and compare the results with the association models.
+
+There are 7,235 adults aged 20 or older in this dataset, including 6,919 with observed BMI and systolic blood pressure. I will examine missingness in the variables used for analysis before deciding how to handle incomplete observations. I will also discuss how the cross-sectional design affects the interpretation of any causal estimates.
+
+## Analysis 2: Stand-your-ground Laws and Homicide Mortality
+
+**Research question:** How is the adoption of stand-your-ground laws associated with homicide mortality, and how might its effect change over the years following implementation?
+
+I plan to combine the RAND firearm legislation dataset (`gunleg`) with CDC homicide mortality data (`cdcmurd`). The unit of analysis will be a state-year. The exposure will be adoption of a stand-your-ground law, defined using the law subtype and effective dates in RAND. The primary outcome will be the annual state-level homicide mortality rate (`Death.Rate`). I may also examine CDC firearm mortality (`cdcfiremort`) as a secondary outcome.
+
+I will first summarize the timing of legislative changes and visualize mortality trends across states. I then plan to link the policy records with the CDC data and examine the association between policy adoption and mortality. If the available years and comparison states allow it, I would like to extend the analysis to difference-in-differences and an event study, focusing on how estimated effects change one, two, or more years after adoption.
+
+For causal inference, I will consider differences across states, other policy changes, and changes over time that may affect mortality. I will assess pre-policy trends and the assumptions required for the proposed design. I will also check missing mortality rates and year coverage before constructing the analysis sample. If the RAND and CDC data cannot support a useful linked analysis, I will instead use the CDC homicide mortality dataset for a standalone study of geographic and temporal associations.
+
+## Expected Deliverables
+
+I plan to produce two Quarto analysis vignettes: one using NHANES and one using RAND and CDC data, or CDC mortality data alone if needed. Each will include data sources, descriptive statistics, analysis methods, results, and limitations. I will publish the analyses through the `finalproject` R package and its pkgdown website.
